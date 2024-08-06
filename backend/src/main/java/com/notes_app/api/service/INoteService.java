@@ -12,8 +12,6 @@ public interface INoteService {
 
     NoteDto updateNote(Long id, NoteDto noteDto);
 
-    //void deleteNote(Long id);
-
     void deleteNoteById(Long id);
 
     NoteDto archiveNote(Long id);

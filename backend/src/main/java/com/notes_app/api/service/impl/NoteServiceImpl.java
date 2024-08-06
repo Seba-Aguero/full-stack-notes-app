@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.notes_app.api.dto.NoteDto;
@@ -25,14 +24,9 @@ import lombok.RequiredArgsConstructor;
 @Transactional
 public class NoteServiceImpl implements INoteService{
 
-    @Autowired
-    private INoteRepository noteRepository;
-
-    @Autowired
-    private ICategoryRepository categoryRepository;
-
-    @Autowired
-    private NoteMapper noteMapper;
+    private final INoteRepository noteRepository;
+    private final ICategoryRepository categoryRepository;
+    private final NoteMapper noteMapper;
 
     @Override
     public NoteDto createNote(NoteDto noteDto) {
@@ -75,12 +69,6 @@ public class NoteServiceImpl implements INoteService{
         noteRepository.save(updatedNote);
         return noteMapper.entityToDto(updatedNote);
     }
-
-    /* @Override
-    public void deleteNote(Long id) {
-        Note note = noteRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Note not found with id: " + id));
-        noteRepository.delete(note);
-    } */
 
     @Override
     public void deleteNoteById(Long id) {

@@ -4,21 +4,20 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.notes_app.api.dto.CategoryDto;
 import com.notes_app.api.dto.NoteDto;
 import com.notes_app.api.entity.Note;
 
+import lombok.RequiredArgsConstructor;
+
 @Component
+@RequiredArgsConstructor
 public class NoteMapper {
 
-    @Autowired
-    private ModelMapper modelMapper;
-
-    @Autowired
-    private CategoryMapper categoryMapper;
+    private final ModelMapper modelMapper;
+    private final CategoryMapper categoryMapper;
 
     public Note dtoToEntity(NoteDto dto) {
         return modelMapper.map(dto, Note.class);

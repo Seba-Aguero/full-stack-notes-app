@@ -2,7 +2,6 @@ package com.notes_app.api.service.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.notes_app.api.dto.CategoryDto;
@@ -21,14 +20,9 @@ import lombok.RequiredArgsConstructor;
 @Transactional
 public class CategoryServiceImpl implements ICategoryService {
 
-    @Autowired
-    private ICategoryRepository categoryRepository;
-
-    @Autowired
-    private INoteCategoryRepository noteCategoryRepository;
-
-    @Autowired
-    private CategoryMapper categoryMapper;
+    private final ICategoryRepository categoryRepository;
+    private final INoteCategoryRepository noteCategoryRepository;
+    private final CategoryMapper categoryMapper;
 
     @Override
     public CategoryDto createCategory(CategoryDto categoryDto) {
@@ -69,12 +63,6 @@ public class CategoryServiceImpl implements ICategoryService {
         categoryRepository.save(updatedCategory);
         return categoryMapper.entityToDto(updatedCategory);
     }
-
-    /* @Override
-    public void deleteCategory(Long id) {
-        Category category = categoryRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Category not found with id: " + id));
-        categoryRepository.delete(category);
-    } */
 
     @Override
     public void deleteCategoryById(Long id) {

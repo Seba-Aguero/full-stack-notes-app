@@ -22,11 +22,14 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Builder.Default;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "notes")
@@ -46,6 +49,7 @@ public class Note {
     private String content;
 
     @Column(nullable = false)
+    @Default
     private boolean archived = false;
 
     @CreationTimestamp
@@ -56,6 +60,7 @@ public class Note {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @Default
     @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.ALL })
     @JoinTable(
         name = "note_category",

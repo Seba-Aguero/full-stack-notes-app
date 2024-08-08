@@ -1,12 +1,12 @@
 <template>
-  <div class="overflow-y- overflow-x-hidden bg-white">
+  <div class="bg-white">
     <TheHeader @toggle-category-list="toggleCategoryList" />
     <div class="flex flex-col justify-evenly lg:flex-row">
       <CategoryList
-        class="mb-4 w-full lg:mb-0 lg:w-[30%] xl:w-[25%]"
+        class="w-[96%] lg:w-[30%] xl:w-[25%]"
         :isVisible="isCategoryListVisible"
       />
-      <NoteList class="w-full lg:w-[70%] xl:w-[75%]" />
+      <NoteList class="w-[96%] lg:w-[70%] xl:w-[75%]" />
     </div>
   </div>
 </template>

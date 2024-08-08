@@ -15,7 +15,7 @@ export const useCategoriesStore = defineStore("categories", {
         console.error("Error fetching categories:", error);
       }
     },
-    async addCategory(categoryName) {
+    async createCategory(categoryName) {
       try {
         const response = await categoriesService.createCategory({
           name: categoryName,

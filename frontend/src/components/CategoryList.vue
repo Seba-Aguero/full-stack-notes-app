@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="m-3 w-full overflow-y-auto rounded-lg bg-zinc-100 p-4 lg:h-screen"
+    class="m-3 w-full overflow-y-auto rounded-lg bg-zinc-100 p-4"
     :class="{ 'hidden lg:block': !isVisible }"
   >
     <h2 class="mb-5 text-2xl font-semibold">Categories</h2>
@@ -17,7 +17,7 @@
               class="mr-2 h-5 w-5 accent-black"
               v-model="selectedCategories"
               :value="category.id"
-              />
+            />
             <span v-if="!isEditing(category)">{{ category.name }}</span>
             <input
               v-else
@@ -94,7 +94,7 @@
         </div>
       </li>
     </ul>
-    <form @submit.prevent="addCategory" class="mt-5">
+    <form @submit.prevent="createCategory" class="mt-5">
       <input
         v-model="newCategoryName"
         class="w-full rounded-lg border p-2"
@@ -121,7 +121,7 @@ const props = defineProps({
   isVisible: {
     type: Boolean,
     default: true,
-  }
+  },
 });
 
 const categoriesStore = useCategoriesStore();
@@ -136,9 +136,9 @@ const selectedCategories = computed({
   set: (value) => categoriesStore.setSelectedCategories(value),
 });
 
-const addCategory = async () => {
+const createCategory = async () => {
   if (newCategoryName.value.trim() !== "") {
-    await categoriesStore.addCategory(newCategoryName.value.trim());
+    await categoriesStore.createCategory(newCategoryName.value.trim());
     newCategoryName.value = "";
     editingCategoryId.value = null;
   }

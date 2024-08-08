@@ -1,6 +1,6 @@
 <template>
   <main
-    class="m-3 w-full rounded-lg bg-zinc-100 p-4 lg:w-3/4 h-screen"
+    class="m-3 w-full rounded-lg bg-zinc-100 p-4"
   >
     <h2 class="mb-4 text-2xl font-semibold">Notes</h2>
     <div class="mb-4 flex justify-between">
@@ -48,7 +48,7 @@
       <div
         v-for="note in filteredNotes"
         :key="note.id"
-        class="mb-4 rounded-lg border-2 border-gray-200 p-4 shadow-sm shadow-gray-200 transition-colors"
+        class="note-item mb-4 rounded-lg border-2 border-gray-200 p-4 shadow-sm shadow-gray-200 transition-colors"
         :class="{ 'bg-gray-200': note.archived, 'bg-white': !note.archived }"
       >
         <div class="flex items-center justify-between">
@@ -224,29 +224,4 @@ const setFilter = (value) => {
   filter.value = value;
 };
 
-/* watch(
-  () => props.categories,
-  (newCategories, oldCategories) => {
-    if (props.notes.length === 0) {
-      return;
-    }
-
-    const updatedNotes = props.notes.map((note) => {
-      const updatedCategories = note.categories.map((category) => {
-        const updatedCategory = newCategories.find((c) => c.id === category.id);
-        return updatedCategory || category;
-      });
-
-      return {
-        ...note,
-        categories: updatedCategories.filter((category) =>
-          newCategories.some((c) => c.id === category.id),
-        ),
-      };
-    });
-
-    emit("update:notes", updatedNotes);
-  },
-  { deep: true, immediate: true },
-); */
 </script>

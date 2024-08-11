@@ -21,6 +21,7 @@
             <span v-if="!isEditing(category)">{{ category.name }}</span>
             <input
               v-else
+              type="text"
               v-model="editCategoryName"
               class="rounded border p-2"
               @keyup.enter="saveCategory(category.id)"

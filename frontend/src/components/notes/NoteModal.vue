@@ -48,6 +48,7 @@
           <button
             type="button"
             @click="closeModal"
+            id="close-modal-button"
             class="mr-2 rounded-lg bg-gray-500 p-2 text-white transition-colors hover:bg-gray-600"
           >
             Cancel

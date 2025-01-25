@@ -1,9 +1,5 @@
 # Notes App
 
-## Introduction
-
-This project is a web application that allows users to create, edit, delete, archive/unarchive notes, and tag and filter them by categories. The application is divided into a frontend built with Vue.js and a backend built with Spring Boot.
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -12,13 +8,19 @@ This project is a web application that allows users to create, edit, delete, arc
 - [Installation](#installation)
 - [Author](#author)
 
+## Introduction
+
+This project is a web application that allows users to create, edit, delete, archive/unarchive notes, and tag and filter them by categories. The application is divided into a frontend built with Vue.js and a backend built with Spring Boot.
+
 ## Technologies
 
 ### Frontend
+
 - Vue.js 3.4.29
 - Tailwind CSS 3.4.4
 
 ### Backend
+
 - Spring Boot 3.3.1
 - MySQL 8
 
@@ -32,43 +34,50 @@ This project is a web application that allows users to create, edit, delete, arc
 ## Installation
 
 ### 1. Clone the Repository
-   ```bash
-   git clone https://github.com/Seba-Aguero/full-stack-notes-app.git
-   cd full-stack-notes-app
-  ```
+
+```bash
+git clone https://github.com/Seba-Aguero/full-stack-notes-app.git
+cd full-stack-notes-app
+```
 
 ### 2. Set Up the Database:
-  - Open MySQL command line or a MySQL client.
-  - Run the following command to create the database:
-      ```sql
-      CREATE DATABASE IF NOT EXISTS `full-stack-notes-app`;
-      ```
-  - Update the database configuration in the `application.properties` file located in `backend/src/main/resources/`.
+
+- Open MySQL command line or a MySQL client.
+- Run the following command to create the database:
+  ```sql
+  CREATE DATABASE IF NOT EXISTS `full-stack-notes-app`;
+  ```
+- Update the database configuration in the `application.properties` file located in `backend/src/main/resources/`.
 
 ### 3. Install Backend Dependencies:
-  ```bash
-  cd backend
-  mvn clean install
-  ```
+
+```bash
+cd backend
+mvn clean install
+```
 
 ### 4. Start the Backend Server:
-  ```bash
-  mvn spring-boot:run
-  ```
+
+```bash
+mvn spring-boot:run
+```
 
 ### 5. Open a New Terminal and Install Frontend Dependencies:
-  ```bash
-  cd frontend
-  npm install
-  ```
+
+```bash
+cd frontend
+npm install
+```
 
 ### 6. Start the Frontend Server:
-  ```bash
-  npm run dev
-  ```
+
+```bash
+npm run dev
+```
 
 ### 7. Access the Application:
-  - Open your browser and go to http://localhost:5173 to start using the application.
+
+- Open your browser and go to http://localhost:5173 to start using the application.
 
 ## Author
 

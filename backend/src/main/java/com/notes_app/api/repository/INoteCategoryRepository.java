@@ -7,7 +7,7 @@ import com.notes_app.api.entity.NoteCategory;
 
 @Repository
 public interface INoteCategoryRepository extends JpaRepository<NoteCategory, NoteCategory.NoteCategoryId> {
-    void deleteByIdCategoryId(Long categoryId);
 
-    void deleteByIdNoteId(Long noteId);
+  void deleteByIdCategoryId(Long categoryId);
+
 }
